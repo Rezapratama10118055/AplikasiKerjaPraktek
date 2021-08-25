@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_cov"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_margin="10dp"
+    android:background="#FFF47D"
+    app:cardCornerRadius="10dp">
+
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/covid15"
+        android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="6dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textprovensi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Provensi :"
+                    android:textColor="#FFFCFC"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/provensi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Provensi"
+                    android:textColor="#43B8F8"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtkasuspositif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:text="Kasus Posistif :"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/kasuspositif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kasus Posistif"
+                    android:textColor="#FF0000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="180dp"
+                android:layout_marginTop="10dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:id="@+id/textsembuh"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="23dp"
+                   android:text="Kasus Sembuh :"
+                   android:textColor="#FFFFFF" />
+
+               <TextView
+                   android:id="@+id/sembuh"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Kasus Sembuh"
+                   android:textColor="#00FF0C" />
+
+
+
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textmeinggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Kasus Meninggal :"
+                    android:textColor="#FFFFFF" />
+
+
+                <TextView
+                    android:id="@+id/meinggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KasusMeninggal"
+                    android:textColor="#8C06C5" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
