@@ -22,7 +22,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                app:cardCornerRadius="5dp"
+                android:layout_marginTop="-30dp"
+                app:cardCornerRadius="35dp"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -71,9 +72,11 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/bungee"
+                android:fontFamily="@font/baloo_tamma"
                 android:text="Dinas Kesehatan"
                 android:textAlignment="center"
+                android:textColor="#388E3C"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -90,25 +93,59 @@
                 android:text="Dinas Kesehatan merupakan unsur pelaksana otonomi daerah di bidang kesehatan yang berkedudukan di bawah dan bertanggung jawab kepada Bupati melalui Sekretaris Daerah."
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/judul_tujuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/baloo_tamma"
+                android:paddingLeft="10dp"
+                android:text="Tujuan Dan Fungsi"
+                android:textAlignment="viewStart"
+                android:textColor="#388E3C"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/judul_about"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/candal"
+                android:paddingLeft="10dp"
+                android:text="Kepala Dinas \nMempunyai tugas melaksanakan urusan pemerintahan daerah berdasarkan atas otonomi dan tugas pembantuan dalam bidang kesehatan.
+                \nSekretaris \nMelaksanakan perencanaan, pelaporan, urusan keuangan, urusan kepegawaian dan umum.
+                \nBidang Pengendali Masalah Kesehatan \nPengendalian dan pemberantasan penyakit, kejadian luar biasa (KLB) dan bencana serta penyelenggaraan  penyehatan lingkungan.
+                \nBidang Pelayanan Kesehatan \nMenyelenggarakan pelayanan kesehatan keluarga dan reproduksi, pelayanan kesehatan khusus dan pelayanan kesehatan dasar dan rujukan.
+                \nBidang Pengembangan Sumber Daya Kesehatan \nMenyelenggarakan kegiatan pengembangan sumber daya kesehatan meliputi penyediaan data kesehatan, pengembangan sistem informasi kesehatan, registrasi, akreditasi dan sertifikasi tenaga kesehatan dan sarana kesehatan serta pengadaan sarana prasarana dan peralatan kesehatan.
+                \nBidang Jaminan Kesehatan dan Kefarmasian \nMelaksanakan sebagian tugas dinas kesehatan di bidang jaminan kesehatan, kefarmasian, promosi kesehatan, penanggulangan gizi buruk dan upaya kesehatan berbasis masyarakat (UKBM).
+                \nUnit Pelayanan Teknis Dinas"
+                android:textAlignment="viewStart" />
+
 
            <LinearLayout
                android:layout_width="match_parent"
-               android:layout_height="match_parent"
+               android:layout_height="wrap_content"
                android:layout_marginTop="10dp"
                android:orientation="horizontal">
 
 
                <androidx.cardview.widget.CardView
                    android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_weight="1"
+                   android:layout_height="wrap_content"
                    android:layout_marginRight="10dp"
-                   app:cardCornerRadius="10dp">
+                   android:layout_marginLeft="10dp"
+                   android:layout_weight="1"
+                   app:cardCornerRadius="20dp">
 
                    <ImageView
                        android:id="@+id/imageView2"
                        android:layout_width="match_parent"
-                       android:layout_height="140dp"
+                       android:layout_height="160dp"
                        android:layout_margin="5dp"
                        android:layout_weight="1"
                        android:background="@drawable/ppuskes1" />
@@ -117,7 +154,7 @@
 
                <androidx.cardview.widget.CardView
                    android:layout_width="match_parent"
-                   android:layout_height="match_parent"
+                   android:layout_height="wrap_content"
                    android:layout_weight="1"
                    android:layout_marginRight="10dp"
                    app:cardCornerRadius="10dp">
@@ -125,7 +162,7 @@
                    <ImageView
                        android:id="@+id/imageView4"
                        android:layout_width="match_parent"
-                       android:layout_height="140dp"
+                       android:layout_height="160dp"
                        android:layout_margin="5dp"
                        android:layout_weight="1"
                        android:background="@drawable/ppuskes1" />
@@ -134,15 +171,15 @@
 
                <androidx.cardview.widget.CardView
                    android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_weight="1"
+                   android:layout_height="wrap_content"
                    android:layout_marginRight="10dp"
-                   app:cardCornerRadius="10dp">
+                   android:layout_weight="1"
+                   app:cardCornerRadius="20dp">
 
                    <ImageView
                        android:id="@+id/imageView5"
                        android:layout_width="match_parent"
-                       android:layout_height="140dp"
+                       android:layout_height="160dp"
                        android:layout_margin="5dp"
                        android:layout_weight="1"
                        android:background="@drawable/ppuskes1" />
@@ -203,6 +240,31 @@
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_baseline_language_24" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="https://dinkes.belitung.go.id/"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

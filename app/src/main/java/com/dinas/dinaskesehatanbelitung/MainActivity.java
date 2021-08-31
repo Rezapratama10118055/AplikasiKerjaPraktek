@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.dinas.dinaskesehatanbelitung.adapter.SliderPagerAdapter;
 import com.dinas.dinaskesehatanbelitung.adapter.adapterBerita;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mLinearLayout;
 
     RecyclerView recyclerView1,Rec_gambar;
+    private TextView lihatgaleri;
 
     RecyclerView.Adapter Adapterberita;
     RecyclerView.Adapter Adaptergambar;
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         setupSlider();
 
         //Berita
-        recyclerView1 = findViewById(R.id.rec_berita);
+        recyclerView1 = findViewById(R.id.rec_beritalengkap);
         recyclerView1.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView1.setLayoutManager(layoutManager);
@@ -116,6 +118,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent i = new Intent(MainActivity.this,TentangActivity.class);
+                startActivity(i);
+            }
+        });
+
+        lihatgaleri = findViewById(R.id.txlihatGambar);
+        lihatgaleri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, GaleriActivity.class);
                 startActivity(i);
             }
         });

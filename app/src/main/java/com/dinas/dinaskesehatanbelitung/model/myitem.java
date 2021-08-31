@@ -6,12 +6,13 @@ public class myitem {
 
 
 
-    public static int[] images = {R.drawable.vaksin,R.drawable.isolasi,R.drawable.hepatitis};
+    public static int[] images = {R.drawable.vaksin,R.drawable.isolasi,R.drawable.hepatitis,R.drawable.callcenter};
     public static String[] nama = {
 
               "VAKSIN"
             , "ISOLASI"
             , "KESEHATAN"
+            , "INFORMASI"
     };
 
 
@@ -19,6 +20,7 @@ public class myitem {
              "Beda 7 Jenis Vaksin COVID-19 yang Akan Dipakai di Indonesia"
             ,"Tempat Isolasi Mandiri Dengan Syarat Tertentu "
             ,"Hari Hepatitis Sedunia Tahun 2021 “HEPATITIS CAN’T WAIT"
+            ,"Nomor Penting Layanan Darurat Covid-19"
 
 
     };
@@ -101,12 +103,22 @@ public class myitem {
             "Konsumsi alkohol yang berlebihan dapat menyebabkan kerusakan hati dan memicu hepatitis alkoholik.\n" +
             "Sistem kekebalan tubuh salah mengira hati sebagai objek berbahaya dan mulai menyerangnya. Kondisi ini bisa menyebabkan peradangan berkelanjutan dengan level ringan hingga parah yang seringkali menghambat fungsi hati."
 
+            ,"\tNomor Penting Penanganan Covid-19 di Kabupaten Belitung\n"+
+            "\nNo Darurat Diskes\n"
+            +"08174119119\n"
+            +"No Pusat Pemulihan dan Karantina Mandiri\n"
+            +"081272929595\n"
+            +"Nomor Darurat Covid-19\n"
+            +"0811671119\n"
+            +"Penjemputan Jenazah Isomah\n"
+            +"082181225008"
     };
 
     public static String[] tanggal = {
              "JUL 26, 2021"
             ,"JUL 26, 2021"
             ,"JUL 26, 2021"
+            ,"Aug 31, 2021"
 
 
     };
@@ -115,6 +127,7 @@ public class myitem {
     public static String[] katagori = {
              "Covid"
             ,"Covid"
+            ,"Berita"
             ,"Berita"
 
 
@@ -125,6 +138,7 @@ public class myitem {
 
     public static String[] akun = {
              "Admin"
+            ,"Admin"
             ,"Admin"
             ,"Admin"
 

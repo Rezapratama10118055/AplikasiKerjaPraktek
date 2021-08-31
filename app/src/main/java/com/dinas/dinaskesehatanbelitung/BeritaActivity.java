@@ -1,6 +1,10 @@
 package com.dinas.dinaskesehatanbelitung;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
@@ -8,12 +12,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import java.io.IOException;
+import com.dinas.dinaskesehatanbelitung.adapter.adapterBerita;
+import com.dinas.dinaskesehatanbelitung.model.model;
+import com.dinas.dinaskesehatanbelitung.model.modelgambar;
+import com.dinas.dinaskesehatanbelitung.model.myitem;
 
-public class BeritaActivity extends AppCompatActivity implements View.OnClickListener {
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class BeritaActivity extends AppCompatActivity  {
 
     private VideoView videoView;
     private MediaController mediaController;
@@ -23,6 +34,17 @@ public class BeritaActivity extends AppCompatActivity implements View.OnClickLis
     private Button Playmusic, Pause, Stop;
     private MediaPlayer mediaPlayer;
 
+    RecyclerView recyclerView2,Rec_gambar;
+
+    RecyclerView.Adapter Adapterberita;
+    RecyclerView.Adapter Adaptergambar;
+    RecyclerView.LayoutManager layoutManager;
+    private ArrayList<model> dataItem;
+    private  ArrayList<modelgambar>datagambar;
+    private ImageView imageAbout;
+    private CardView btn_berita,btn_galeri,btn_struktur,btn_tentang;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,133 +53,27 @@ public class BeritaActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-        mediaPlayer = MediaPlayer.create(BeritaActivity.this, R.raw.laguku);
-
-        Playmusic = findViewById(R.id.playmusic);
-        Pause = findViewById(R.id.pause);
-        Stop = findViewById(R.id.stop);
 
 
-        Playmusic.setOnClickListener(this);
-        Pause.setOnClickListener(this);
-        Stop.setOnClickListener(this);
-        stateAwal();
-
-        videoView = findViewById(R.id.video);
-        playVideo = findViewById(R.id.play);
-        mediaController = new MediaController(this);
-
-
-
-        playVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video);
-
-                videoView.setVideoURI(uri);
-
-
-                videoView.setMediaController(mediaController);
-                mediaController.setAnchorView(videoView);
-
-
-                videoView.start();
-            }
-        });
-
-
-    }
-
-    private void stateAwal() {
-        Playmusic.setEnabled(true);
-        Pause.setEnabled(false);
-        Stop.setEnabled(false);
-    }
-
-
-    private void playAudio() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.laguku);
-
-
-        Playmusic.setEnabled(false);
-        Pause.setEnabled(true);
-        Stop.setEnabled(true);
-
-
-        try{
-            mediaPlayer.prepare();
-        }catch (IllegalStateException ex){
-            ex.printStackTrace();
-        }catch (IOException ex1){
-            ex1.printStackTrace();
+        //Berita
+        recyclerView2 = findViewById(R.id.rec_beritalengkap);
+        recyclerView2.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView2.setLayoutManager(layoutManager);
+        recyclerView2.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        dataItem = new ArrayList<>();
+        for(int i = 0; i < myitem.nama.length; i++ ){
+            dataItem.add(new model(myitem.images[i] ,myitem.nama[i] ,myitem.penjelasan[i],myitem.PenjelasanLengkap[i],myitem.akun[i],myitem.tanggal[i],myitem.katagori[i]));
         }
-        mediaPlayer.start();
+        Adapterberita = new adapterBerita(dataItem, this);
+        recyclerView2.setAdapter(Adapterberita);
 
 
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                stateAwal();
-            }
-        });
-    }
-
-
-
-
-    @SuppressLint("SetTextI18n")
-    private void pauseAudio() {
-
-        if(mediaPlayer.isPlaying()){
-            if(mediaPlayer != null){
-                mediaPlayer.pause();
-                Pause.setText("Lanjutkan");
-            }
-        }else {
-
-
-            if(mediaPlayer != null){
-                mediaPlayer.start();
-                Pause.setText("Pause");
-            }
-        }
 
     }
 
 
-    private void stopAudio() {
-        mediaPlayer.stop();
-        try {
-
-            mediaPlayer.prepare();
-            mediaPlayer.seekTo(0);
-        }catch (Throwable t){
-            t.printStackTrace();
-        }
-        stateAwal();
-    }
-
-
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.playmusic:
-                playAudio();
-                break;
-
-            case R.id.pause:
-                pauseAudio();
-                break;
-
-            case R.id.stop:
-                stopAudio();
-                break;
-        }
-    }
-    }
+}
 
 
 

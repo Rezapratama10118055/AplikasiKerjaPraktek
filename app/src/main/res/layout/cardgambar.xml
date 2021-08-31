@@ -8,12 +8,27 @@
     app:cardCornerRadius="15dp"
     app:cardElevation="5dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_galeri"
-        android:layout_width="wrap_content"
-        android:scaleType="centerCrop"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img_placeholder" />
+        <ImageView
+            android:id="@+id/img_galeri"
+            android:layout_width="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_placeholder" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
 
 </androidx.cardview.widget.CardView>
