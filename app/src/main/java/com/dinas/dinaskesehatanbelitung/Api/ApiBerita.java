@@ -5,15 +5,15 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiCovid {
-    public static Retrofit getApiCovid(){
+public class ApiBerita {
+    public static Retrofit getApiBerita(){
         HttpLoggingInterceptor httpLoggingInterception = new HttpLoggingInterceptor();
         httpLoggingInterception.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterception).build();
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://data.covid19.go.id/")
+                .baseUrl("https://api-berita-indonesia.vercel.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
@@ -21,9 +21,8 @@ public class ApiCovid {
 
 
     }
-    public static ApiService getData(){
-        ApiService apiService = getApiCovid().create(ApiService.class);
+    public static ApiService getDataBerita(){
+        ApiService apiService = getApiBerita().create(ApiService.class);
         return apiService;
     }
 }
-

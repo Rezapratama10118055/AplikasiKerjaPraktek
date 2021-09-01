@@ -15,8 +15,6 @@ import android.widget.TextView;
 import com.dinas.dinaskesehatanbelitung.Api.ApiCovid;
 import com.dinas.dinaskesehatanbelitung.Api.ApiCovidUpdate;
 import com.dinas.dinaskesehatanbelitung.adapter.adapterCovid;
-import com.dinas.dinaskesehatanbelitung.model.Datum;
-import com.dinas.dinaskesehatanbelitung.model.Example;
 
 import java.util.List;
 
@@ -29,7 +27,7 @@ public class StrukturActivity extends AppCompatActivity {
     private RecyclerView reccovid,reccovidupdate;
     private TextView covidmeninggal, covidsembuh, coviddirawat, covidpositif, tanggalUpdate;
     RecyclerView.LayoutManager layoutManager;
-    private List<Datum> dataItem;
+
     adapterCovid adapter;
     private CardView beritaklik;
 
@@ -70,13 +68,13 @@ public class StrukturActivity extends AppCompatActivity {
 
     private void getDatacovid() {
 
-        Call<Example> call = ApiCovid.getData().getDataCovid();
-        call.enqueue(new Callback<Example>() {
+        Call<com.dinas.dinaskesehatanbelitung.model.covidprovensi.Example> call = ApiCovid.getData().getDataCovid();
+        call.enqueue(new Callback<com.dinas.dinaskesehatanbelitung.model.covidprovensi.Example>() {
             @Override
-            public void onResponse(Call<Example> call, Response<Example> response) {
+            public void onResponse(Call<com.dinas.dinaskesehatanbelitung.model.covidprovensi.Example> call, Response<com.dinas.dinaskesehatanbelitung.model.covidprovensi.Example> response) {
                 if (response.isSuccessful()) {
                     Log.e("berhasil", response.body().toString());
-                    List<Datum> example = response.body().getData();
+                    List<com.dinas.dinaskesehatanbelitung.model.covidprovensi.ListDatum> example = response.body().getListData();
                     adapter = new adapterCovid(example);
                     reccovid.setAdapter(adapter);
 
@@ -85,7 +83,7 @@ public class StrukturActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Example> call, Throwable t) {
+            public void onFailure(Call<com.dinas.dinaskesehatanbelitung.model.covidprovensi.Example> call, Throwable t) {
                 Log.e("gagal", t.getLocalizedMessage());
 
             }
@@ -118,6 +116,7 @@ public class StrukturActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<com.dinas.dinaskesehatanbelitung.model.covidupdate.Example> call, Throwable t) {
                 Log.e("gagal", t.getLocalizedMessage());
+
 
             }
         });

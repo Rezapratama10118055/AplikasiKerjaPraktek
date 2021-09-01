@@ -11,20 +11,19 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dinas.dinaskesehatanbelitung.R;
-import com.dinas.dinaskesehatanbelitung.model.Datum;
 
 import java.util.List;
 
 public class adapterCovid  extends RecyclerView.Adapter<adapterCovid.ViewHolder>  {
 
     private static final String TAG = "adapterCovid";
-    List<Datum> examples;
+    List<com.dinas.dinaskesehatanbelitung.model.covidprovensi.ListDatum> examples;
     private Context context;
 
 
 
 
-    public adapterCovid(List<Datum> example) {
+    public adapterCovid(List<com.dinas.dinaskesehatanbelitung.model.covidprovensi.ListDatum> example) {
         examples = example;
     }
 
@@ -38,11 +37,12 @@ public class adapterCovid  extends RecyclerView.Adapter<adapterCovid.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull adapterCovid.ViewHolder holder, int position) {
-        Datum example = examples.get(position);
-        holder.txpro.setText(example.getProvinsi());
-        holder.txsem.setText(Integer.toString(example.getKasusSemb()));
-        holder.txpos.setText(Integer.toString(example.getKasusPosi()));
-        holder.txmen.setText(Integer.toString(example.getKasusMeni()));
+        com.dinas.dinaskesehatanbelitung.model.covidprovensi.ListDatum example = examples.get(position);
+        holder.txpro.setText(example.getKey());
+        holder.txsem.setText(Double.toString(example.getJumlahSembuh()));
+        holder.txpos.setText(Double.toString(example.getJumlahKasus()));
+        holder.txmen.setText(Double.toString(example.getJumlahMeninggal()));
+
 
     }
 
@@ -60,7 +60,7 @@ public class adapterCovid  extends RecyclerView.Adapter<adapterCovid.ViewHolder>
             txpos = itemView.findViewById(R.id.kasuspositif);
             txmen = itemView.findViewById(R.id.meinggal);
             txpro = itemView.findViewById(R.id.provensi);
-           txsem = itemView.findViewById(R.id.sembuh);
+            txsem = itemView.findViewById(R.id.sembuh);
 
         }
     }
